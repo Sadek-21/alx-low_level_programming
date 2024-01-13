@@ -1,24 +1,103 @@
-Explanation Video for 0x0A. C - argc, argv
+C - argc, argv
+		
 
-0-whatsmyname.c
+		
+TASKS
+		
 
-This is a simple C program that prints the name of the program to the standard output. Let's go through the code step by step:
-#include < stdio.h > 
-#include "main.h"
-This code includes the standard input/output library and a custom header file main.h. The custom header file may contain function declarations or other preprocessor directives.
-/** 
-* main - prints the name of the program 
-* @argc: number of arguments 
-* @argv: array of arguments 
-* 
-* Return: Always 0 (Success) 
-*/
-This code defines the main function, which is the entry point of the program. The function takes two arguments: argc, an integer representing the number of arguments passed to the program, and argv, an array of strings containing the arguments passed to the program. The function returns an integer value (in this case, 0) to the operating system indicating whether the program terminated successfully or not.
-int main(int argc __attribute__((unused)), char *argv[])
-The __attribute__((unused)) is a GCC attribute that suppresses the "unused parameter" warning when compiling with -Wunused-parameter flag. In this case, argc is not used in the function body, so this attribute is used to prevent the warning.
-{ 
-printf("%s\n", *argv); 
-return (0); 
-}
-This code prints the first argument in the argv array (which is the name of the program itself) to the standard output using the printf function. The "%s\n" format specifier in printf is used to print a string followed by a newline character. The argument passed to printf is *argv, which is a pointer to the first element of the argv array, which contains the name of the program.
-Finally, the function returns 0 to indicate that the program has terminated successfully.
+		
+[0. It ain't what they call you, it's what you answer to](0-whatsmyname.c)
+		
+
+		
+Write a program that prints its name, followed by a new line.
+		
+
+		
+If you rename the program, it will print the new name, without having to compile it again
+		
+You should not remove the path before the name of the program
+		
+
+		
+[1. Silence is argument carried out by other means](1-args.c)
+		
+
+		
+Write a program that prints the number of arguments passed into it.
+		
+
+		
+Your program should print a number, followed by a new line
+		
+
+		
+
+		
+[2. The best argument against democracy is a five-minute conversation with the average voter](2-args.c)
+		
+
+		
+Write a program that prints all arguments it receives.
+		
+
+		
+All arguments should be printed, including the first one
+		
+Only print one argument per line, ending with a new line
+		
+
+		
+[3. Neither irony nor sarcasm is argument](3-mul.c)
+		
+
+		
+Write a program that multiplies two numbers.
+		
+
+		
+Your program should print the result of the multiplication, followed by a new line
+		
+You can assume that the two numbers and result of the multiplication can be stored in an integer
+		
+If the program does not receive two arguments, your program should print Error, followed by a new line, and return 1
+		
+
+		
+[4. To infinity and beyond](4-add.c)
+		
+
+		
+Write a program that adds positive numbers.
+		
+
+		
+Print the result, followed by a new line
+		
+If no number is passed to the program, print 0, followed by a new line
+		
+If one of the number contains symbols that are not digits, print Error, followed by a new line, and return 1
+		
+You can assume that numbers and the addition of all the numbers can be stored in an int
+		
+
+		
+[5. Minimal Number of Coins for Change](100-change.c)
+		
+
+		
+Write a program that prints the minimum number of coins to make change for an amount of money.
+		
+
+		
+Usage: ./change cents
+		
+where cents is the amount of cents you need to give back
+		
+if the number of arguments passed to your program is not exactly 1, print Error, followed by a new line, and return 1
+		
+you should use atoi to parse the parameter passed to your program
+		
+If the number passed as the argument is negative, print 0, followed by a new line
+		
+You can use an unlimited number of coins of values 25, 10, 5, 2, and 1 cent
