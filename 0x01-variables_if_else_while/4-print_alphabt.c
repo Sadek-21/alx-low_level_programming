@@ -1,22 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
+#include <ctype.h>
 /**
- * main - Prints the alphabet without q and e.
- *
- * Return: Always 0 (Success)
- */
+*main - Program to print alphabet letters except q and e followed by new line
+*
+*Return: return 0
+*/
 int main(void)
 {
-	int i;
+	int letter;
 
-	for (i = 97; i < 123; i++)
+	for (letter = 'a'; letter <= 'z'; letter++)
 	{
-		if (i != 101 && i != 113)
+		if (letter == 'q' || letter == 'e')
 		{
-			putchar(i);
+			continue;
 		}
+		putchar(letter);
 	}
 	putchar('\n');
 	return (0);

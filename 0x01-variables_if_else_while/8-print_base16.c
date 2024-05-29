@@ -1,21 +1,26 @@
 #include <stdio.h>
-
+#include <ctype.h>
 /**
- * main - Prints numbers between 0 to 9 and letters between a to f.
- *
- * Return: Always 0 (Success)
- */
+*main - Prints all single digits of base 16 followed by new line
+*
+*Return: returns 0
+*/
 int main(void)
 {
-	int i;
+	int digit;
 
-	for (i = 48; i < 58; i++)
+	for (digit = '0'; digit <= '9'; digit++)
 	{
-		putchar(i);
-	}
-	for (i = 97; i < 103; i++)
-	{
-		putchar(i);
+		putchar(digit);
+		if (digit == '9')
+		{
+			digit = 'a';
+			for (; digit <= 'f'; digit++)
+			{
+				putchar(digit);
+			}
+			break;
+		}
 	}
 	putchar('\n');
 	return (0);
